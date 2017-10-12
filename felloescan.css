@@ -1,0 +1,169 @@
+<style type="text/css">.menu2 {
+	float: left;
+	width: 650px;
+	height: 20px;
+	text-align: right;
+}
+body {
+	font-size: 20px;
+	font-family: Verdana, serif, Arial, Helvetica;
+	background-color: #ffffff;
+	color: #6396bf;
+	<!--text-shadow: #000000 2px 2px 2px;
+	-->
+}
+A:link {
+	color: #ffffff;
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: #000000 2px 2px 2px;
+	text-decoration: none;
+}
+A:visited {
+	color: #ffffff;
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: #000000 2px 2px 2px;
+	text-decoration: none;
+}
+A:hover {
+	color: #ffffff;
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: #000000 2px 2px 2px;
+	text-decoration: underline;
+}
+A:active {
+	color: #ffffff;
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: #000000 2px 2px 2px;
+	text-decoration: underline;
+}
+.submit {
+	height: 40px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 15px;
+}
+.controlSubmit {
+	width: 200px;
+	height: 40px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 15px;
+}
+.message {
+	text: rgb(255, 0, 0);
+	font-weight: bold;
+	font-size: 18px;
+}
+.submitContainer {
+	float: left;
+}
+.menu {
+	float: left;
+	width: 200px;
+	height: 30px;
+	background-color: #cae9ff;
+	border: solid 2px #1d5fa9;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	margin-right: 20px;
+}
+.settingsText {
+	float: left;
+	width: 350px;
+}
+.settingsDescr {
+	font-size: 10px;
+	padding-bottom: 20px;
+}
+.settingsInput {
+	width: 150px;
+}
+.result {
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: rgb(200, 200, 200);
+	border: solid 2px #1d5fa9;
+	width: 625px;
+}
+.calDescr {
+	font-size: 10px;
+	padding-bottom: 20px;
+	width: 200px;
+}
+.cal1GenerateDebugDiv {
+	padding-bottom: 50px;
+}
+.inspectPass {
+	font-size: 500%;
+	margin: auto;
+	width: 60%;
+	text-align: center;
+	color: green;
+}
+.inspectFail {
+	font-size: 500%;
+	margin: auto;
+	width: 60%;
+	text-align: center;
+	color: red;
+}
+#deleteButton {
+	float: left;
+	padding-left: 10px;
+}
+#viewButton {
+	padding-left: 250px;
+}
+#error1 {
+	font-size: 40px;
+	font-family: Verdana, serif, Arial, Helvetica;
+	color: #ff0000;
+	text-shadow: #000000 2px 2px 2px;
+}
+#menuContainer {
+	width: 800px;
+	text-align: center;
+	padding-bottom: 50px;
+}
+#cal1ContentDiv {
+	margin-top: 75px;
+}
+#cal1ControlsDiv {
+	float: left;
+}
+#cal1ImageDiv {
+	float: none;
+	margin-top: 75px;
+}
+#outerImageDiv {
+	float: none;
+	margin-top: 75px;
+	width: 1296px;
+	height: 972px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('skull.jpg');
+}
+#outerPresetDiv {
+	margin-top: 75px;
+	background-color: rgb(130, 130, 130);
+	width: 650px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+#presetTextDiv {
+	float: left;
+	padding-left: 25px;
+	padding-right: 12px;
+	padding-top: 5px;
+}
+</style>
