@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+	.menu2 { float: left;    width: 650px;   height: 20px;    text-align: right;}body {  font-size: 20px;    font-family: Verdana, serif, Arial, Helvetica;  background-color: #ffffff;  color: #6396bf; <!--text-shadow: #000000 2px 2px 2px;-->}A:link    {color: #ffffff; font-size: 22px; font-weight: bold; text-shadow: #000000 2px 2px 2px; text-decoration: none;}A:visited {color: #ffffff; font-size: 22px; font-weight: bold; text-shadow: #000000 2px 2px 2px; text-decoration: none;}A:hover   {color: #ffffff; font-size: 22px; font-weight: bold; text-shadow: #000000 2px 2px 2px; text-decoration: underline;}A:active  {color: #ffffff; font-size: 22px; font-weight: bold; text-shadow: #000000 2px 2px 2px; text-decoration: underline;}.submit {    height: 40px;   margin-bottom: 10px;    font-weight: bold;  font-size: 18px;    margin-right: 15px;}.controlSubmit {    width: 200px;   height: 40px;   margin-bottom: 10px;    font-weight: bold;  font-size: 18px;    margin-right: 15px;}.message {  text: rgb(255, 0, 0);   font-weight: bold;  font-size: 18px;}.submitContainer { float: left;}.menu {    float: left;    width: 200px;   height: 30px;   background-color: #cae9ff;  border: solid 2px #1d5fa9;  padding-top: 10px;  padding-bottom: 5px;    margin-right: 20px;}.settingsText { float: left;    width: 350px;}.settingsDescr{   font-size: 10px;    padding-bottom: 20px;}.settingsInput {  width: 150px;}.result { margin-top: 10px;   padding-top: 10px;  padding-left: 10px; display: inline-block;  vertical-align: middle; background-color: rgb(200, 200, 200);   border: solid 2px #1d5fa9;  width: 625px;}.calDescr{    font-size: 10px;    padding-bottom: 20px;   width: 200px;}.cal1GenerateDebugDiv {   padding-bottom: 50px;}.inspectPass{font-size: 500%;margin: auto;width: 60%;text-align: center;color: green;}.inspectFail{font-size: 500%;margin: auto;width: 60%;text-align: center;color: red;}#deleteButton { float: left;    padding-left: 10px;}#viewButton {   padding-left: 250px;}#error1 {  font-size: 40px;    font-family: Verdana, serif, Arial, Helvetica;  color: #ff0000; text-shadow: #000000 2px 2px 2px;}#menuContainer {  width: 800px;   text-align: center; padding-bottom: 50px;}#cal1ContentDiv {    margin-top: 75px;}#cal1ControlsDiv { float: left;}#cal1ImageDiv {    float: none;    margin-top: 75px;}#outerImageDiv {  float: none;    margin-top: 75px;   width: 1296px;  height: 972px;  background-size: contain;   background-repeat: no-repeat;   background-image: url('skull.jpg');}#outerPresetDiv {   margin-top: 75px;   background-color: rgb(130, 130, 130);   width: 650px;   margin-bottom: 10px;    padding-top: 10px;}#presetTextDiv { float: left;    padding-left: 25px; padding-right: 12px;    padding-top: 5px;}
+	</style>
+	<script type="text/javascript">
+	var imageCount = 0;function endsWith(str, suffix) {    return str.indexOf(suffix, str.length - suffix.length) !== -1;}function startup1(){   setTimeout(updateImgImage, 1000);}function startup2(){  setTimeout(updateDivImage, 1000);}function updateImgImage(){    var img = document.getElementById('image'); img.src = 'camImageL_' + Math.random() + '.jpg';    imageCount = imageCount + 1;}function updateDivImage(){ var div = document.getElementById('outerImageDiv'); div.style.backgroundImage = "url('camImageL_" + Math.random() + ".jpg')";   imageCount = imageCount + 1;    setTimeout(updateDivImage, 4000);}function centerTableClick(event){ var pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById('outerImageDiv').offsetLeft;  var pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById('outerImageDiv').offsetTop;   window.location.href = 'cal3?y=' + pos_y;}function rightLaserClick(event) {    var pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById('outerImageDiv').offsetLeft;    var pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById('outerImageDiv').offsetTop;  window.location.href = 'cal4?rightLaserX=' + pos_x + '&rightLaserY=' + pos_y;}function leftLaserClick(event) {  var pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById('outerImageDiv').offsetLeft;  var pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById('outerImageDiv').offsetTop;   window.location.href = 'cal5?leftLaserX=' + pos_x + '&leftLaserY=' + pos_y;}var aaa = "aaa"
+	</script>
+	<title></title>
+</head>
+<body onload="startup1();">
+	<img src="/dbg/1234.png">
+	<div id="menuContainer" style="visibility:hidden">
+		<div class="menu">
+			<a href="/preview">SCAN</a>
+		</div>
+		<div class="menu">
+			<a href="/cal1">CAMERA</a>
+		</div>
+		<div class="menu">
+			<a href="/settings">SETTINGS</a>
+		</div>
+	</div>
+	<div id="menuContainer">
+		<div class="menu">
+			<a href="/inspection">INSPECTION</a>
+		</div>
+		<div class="menu">
+			<a href="/system">SYSTEM</a>
+		</div>
+	</div>
+	<div id="cal1ContentDiv">
+		<div id="cal1ControlsDiv">
+			<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+				<div>
+					<input class="submit" name="cmd" type="submit" value="Save">
+				</div><input class="settingsInput" name="lsrMagTh" style="width: 75px" type="text" value="10">
+				<div class="calDescr">
+					Laser magnitude threshold
+				</div><input class="settingsInput" name="minLsrWidth" style="width: 75px" type="text" value="10">
+				<div class="calDescr">
+					Min laser width
+				</div><input class="settingsInput" name="ROITpLftX" style="width: 75px" type="text" value="1300">
+				<div class="calDescr">
+					ROI top left point x-coordinate
+				</div><input class="settingsInput" name="ROITpLftY" style="width: 75px" type="text" value="600">
+				<div class="calDescr">
+					ROI top left point y-coordinate
+				</div><input class="settingsInput" name="ROIWidth" style="width: 75px" type="text" value="650">
+				<div class="calDescr">
+					ROI width
+				</div><input class="settingsInput" name="ROIHeight" style="width: 75px" type="text" value="1400">
+				<div class="calDescr">
+					ROI height
+				</div><input class="settingsInput" name="frmPerRev" style="width: 75px" type="text" value="2">
+				<div class="calDescr">
+					Frames per revolution
+				</div>
+			</form>
+			<div class="cal1GenerateDebugDiv">
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="generateDebug"><input class="controlSubmit" style="height: 60px" type="submit" value="Test">
+					<div class="calDescr">
+						Test laser location in blue rectangular ROI
+					</div>
+				</form>
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="calibrateLasers"><input class="controlSubmit" style="height: 60px" type="submit" value="Calibrate Lasers">
+					<div class="calDescr">
+						Change Rim ID to "calibration" &amp; press this button to calibrate lasers
+					</div>
+				</form>
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="saveEntireImg"><input class="controlSubmit" style="height: 60px" type="submit" value="Save Entire Image">
+					<div class="calDescr">
+						Save entire image as *.png file
+					</div>
+				</form>
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="saveROIImg"><input class="controlSubmit" style="height: 60px" type="submit" value="Save ROI Image">
+					<div class="calDescr">
+						Save blue rectangular area image as *.png file
+					</div>
+				</form>
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="toggleLeftLaser"><input class="controlSubmit" type="submit" value="Toggle Left Laser">
+				</form>
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="toggleRightLaser"> <input class="controlSubmit" type="submit" value="Toggle Right Laser">
+				</form>
+				<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+					<input name="cmd" type="hidden" value="disableMotor"><input class="controlSubmit" type="submit" value="Disable Motor">
+				</form>
+				<div>
+					<form action="/vision" enctype="application/x-www-form-urlencoded" method="post">
+						<input name="cmd" type="hidden" value="rotateTable"><input class="settingsInput" name="degrees" style="width: 75px" type="text" value="360"><input class="submit" style="width: 110px" type="submit" value="Rotate">
+					</form>
+				</div>
+				<div class="calDescr">
+					Rotates the turntable in degrees.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="position: relative">
+		<div><img id="image" onload="setTimeout(updateImgImage, 0);" src="camImageL_0.12483696698277691.jpg" style="position: absolute" width="1296"></div>
+	</div>
+</body>
+</html>
