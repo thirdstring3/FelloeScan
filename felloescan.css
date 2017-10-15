@@ -12,6 +12,24 @@ body {
 	<!--text-shadow: #000000 2px 2px 2px;
 	-->
 }
+
+button {
+  margin-top: 20px;
+  line-height: 60px;
+  padding: 0 40px;
+  background: #cae9ff;
+  border: solid 2px #1d5fa9;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: #000000 2px 2px 2px;
+  text-decoration: none;
+}
+button:hover {
+  text-decoration: underline;
+}
+
+
 A:link {
 	color: #ffffff;
 	font-size: 22px;
