@@ -1,13 +1,13 @@
 <?php
 
   $display = "none";
-  $file_name = 'config.csv';
+  $file_name = 'config.txt';
   if(isset($_POST) && !empty($_POST)){
     $file = fopen( $file_name, 'w');
     // $headers = array();
     $body = array();
     foreach($_POST as $key=>$vals){
-      fputcsv($file, array($key.":".$vals));
+      fputcsv($file, array($key.":".$vals.", "));
       // $headers[] = $key;
       // $body[] = $vals;
     }
@@ -79,7 +79,7 @@
            
         </fieldset>             
 
-        <!-- <button class="btn btn-primary" type="submit">Save</button> -->
+        <!--<button class="btn btn-primary" type="submit">Save</button> -->
       </form> 
     </div>
       
@@ -97,6 +97,6 @@
         });
 
       })
-    </script
+    </script>
   </body>
 </html>
